@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
 // Sample messages from team members
 const messages = [
   {
     id: 4,
-    name: "Alffrey George Chemmannoor",
+    name: "Alffrey George",
     role: "Senior Manager Technology",
     message: `Sanjib, you've done a phenomenal job building rapport with the team and ensuring we remain on track with our deliverables through all the ups and downs. The client loves you and so do we. Though we are sad to see you go, we wish you all the very best in your next adventure. Till we meet again, take care.`,
     avatar: "https://i.ibb.co/jPj67FNG/profile-image-1713237103510.webp",
@@ -73,11 +73,28 @@ Many thanks for your unwavering support and cooperation throughout the ID journe
 Cheers`,
     avatar: "https://i.postimg.cc/KvFKbMgR/1685432181710.jpg",
   },
+  {
+    id: 9,
+    name: "Rahul Kandpal",
+    role: "Senior Quality Engineer",
+    message: `Sanjib, you have always been a key pillar to this team, driving it to the success milestone we stand at today. You were someone who was always top on everything, knowing each of the team members to their true potential. I wouldn’t be wrong in saying that we wouldn’t have been here, had it not been for you as our project manager. Your contribution to the team and the project is immense, and beyond description. I really wish that you find success and joy wherever you go, and continue to build this momentum and credibility. Keep growing, keep rocking. Adios amigo!!!`,
+    avatar: "https://i.postimg.cc/Lsvf8qX3/shared-image-4.jpg",
+  },
+  {
+    id: 10,
+    name: "Mohanish Masdekar",
+    role: "Senior Experience Engineer",
+    message: `Hi Sanjib,
+ 
+First of all I would like to congratulate you on your new job 🎉🎉. Also, many thanks to you for managing this project extremely well. You have been a wonderful scrum master and regardless of what the project is, I am confident you can handle it well. Best of luck to you in your future endeavours!
+ 
+Thanks,`,
+    avatar: "https://i.postimg.cc/76sLp0Lj/Media.jpg",
+  },
 ];
 
 export const MessagesSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const [activeMessage, setActiveMessage] = useState<number | null>(null);
 
   return (
@@ -90,7 +107,7 @@ export const MessagesSection: React.FC = () => {
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
@@ -147,9 +164,19 @@ export const MessagesSection: React.FC = () => {
                                    index === 7
                                      ? "bg-gradient-to-tr from-green-50 to-blue-50"
                                      : ""
-                                 }`}
+                                 }
+                                                 ${
+                                                   index === 8
+                                                     ? "bg-gradient-to-tr from-yellow-50 to-red-50"
+                                                     : ""
+                                                 }
+                ${
+                  index === 9
+                    ? "bg-gradient-to-tr from-pink-50 to-orange-50"
+                    : ""
+                }`}
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="relative p-10 pb-24">
@@ -159,9 +186,10 @@ export const MessagesSection: React.FC = () => {
 
                 <div className="absolute top-0 right-0 w-24 h-24 bg-white/20 rounded-bl-full shadow-inner"></div>
 
-                <div className="relative mb-4 min-h-500">
+                <div className="relative mb-8 min-h-500">
                   <p className="text-gray-800 text-xl leading-relaxed mb-4 font-medium pt-16">
-                    {activeMessage === message.id
+                    {activeMessage === message.id ||
+                    message.message.length <= 321
                       ? message.message
                       : `${message.message.substring(0, 321)}...`}
                   </p>
