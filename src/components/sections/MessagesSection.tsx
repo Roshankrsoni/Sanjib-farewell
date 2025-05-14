@@ -22,6 +22,13 @@ Wishing you all the best in your future endeavors — wherever you go, they’re
     avatar: "https://i.postimg.cc/cCk83gGQ/image-3.jpg",
   },
   {
+    id: 6,
+    name: "Amit Chawla",
+    role: "Sr. Manager Experience Engineer",
+    message: `Sanjib, it’s been an absolute pleasure working with you. Your calm demeanor, thoughtful leadership, and ability to guide the team through every challenge have been truly admirable. You always knew how to bring clarity, keep things moving smoothly, and ensure everyone felt heard and supported. Your impact here will not be forgotten. Though we’re sad to see you go, we’re cheering for you all the way. Wishing you great success and happiness in your next journey!`,
+    avatar: "https://i.postimg.cc/G3S1ff6m/profile-image-1689309396083.webp",
+  },
+  {
     id: 3,
     name: "Ekta Bahety",
     role: "Lead Engineer",
@@ -43,17 +50,28 @@ Wishing you all the best in your future endeavors — wherever you go, they’re
     message: `A Big Thank You and Best Wishes!
 It’s honestly been such a pleasure working with you. Your friendly nature, constant positivity, and willingness to help out really made a difference to all of us. You were always someone we could count on, and your support (always with a smile!) never went unnoticed. You’ll definitely be missed around here.
 Wishing you all the best for your future endeavours! 😊👍`,
-    avatar:
-      "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    avatar: "https://i.postimg.cc/nh2n21b4/upasna.jpg",
   },
   {
-    id: 6,
-    name: "Robert Kim",
-    role: "Junior Project Manager",
-    message:
-      "As the newest member of the team, I've had the privilege of learning from you for only a short time, but your impact has been profound. The way you've created space for questions and growth has made me feel valued from day one. I'll carry your lessons throughout my career.",
-    avatar:
-      "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    id: 7,
+    name: "Permil Garg",
+    role: "Senior Experience Engineer",
+    message: `It’s been a wonderful experience working with you. Hard to believe it’s already 1.5 years as teammates. We’ve shared many great moments together. I learned a lot from you along the way. Sanjib has always been calm, supportive, and understanding. He never said no when someone needed help.
+ 
+Wishing you all the best in your future endeavours. Good luck with your next projects. Hope we get to work together again soon.`,
+    avatar: "https://i.postimg.cc/8PdCX073/1671902969468.jpg",
+  },
+
+  {
+    id: 8,
+    name: "Tripti Sharma",
+    role: "Associate Technology",
+    message: `Sanjib,
+ 
+Many thanks for your unwavering support and cooperation throughout the ID journey. I wish you all the luck and success for the new adventure awaiting you. You will surely be missed.
+ 
+Cheers`,
+    avatar: "https://i.postimg.cc/KvFKbMgR/1685432181710.jpg",
   },
 ];
 
@@ -119,7 +137,17 @@ export const MessagesSection: React.FC = () => {
                   index === 5
                     ? "bg-gradient-to-tr from-violet-50 to-emerald-50"
                     : ""
-                }`}
+                }
+                 ${
+                   index === 6
+                     ? "bg-gradient-to-tr from-yellow-50 to-red-50"
+                     : ""
+                 }
+                                 ${
+                                   index === 7
+                                     ? "bg-gradient-to-tr from-green-50 to-blue-50"
+                                     : ""
+                                 }`}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
