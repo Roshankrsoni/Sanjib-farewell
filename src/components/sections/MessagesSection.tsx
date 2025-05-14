@@ -5,6 +5,20 @@ import { Quote } from "lucide-react";
 // Sample messages from team members
 const messages = [
   {
+    id: 6,
+    name: "Amit Chawla",
+    role: "Senior Architect",
+    message: `Sanjib, it’s been an absolute pleasure working with you. Your calm demeanor, thoughtful leadership, and ability to guide the team through every challenge have been truly admirable. You always knew how to bring clarity, keep things moving smoothly, and ensure everyone felt heard and supported. Your impact here will not be forgotten. Though we’re sad to see you go, we’re cheering for you all the way. Wishing you great success and happiness in your next journey!`,
+    avatar: "https://i.postimg.cc/G3S1ff6m/profile-image-1689309396083.webp",
+  },
+  {
+    id: 3,
+    name: "Ekta Bahety",
+    role: "Lead Engineer",
+    message: `Sanjib, it’s not easy to say goodbye to someone who has been such a great part of our team. Your leadership as both a Scrum Master and Project Manager has made a lasting impact on us all. The way you managed timelines, kept everything on track, and still made sure no one felt overwhelmed really stood out. You always took the time to communicate clearly and check in with everyone, and that meant a lot. You’ve been such a calm, steady presence and a genuinely great person to work with. While we’re sad to see you go, we’re excited for what lies ahead for you. Wish you all the success and happiness in your future endeavours. You’ll be greatly missed!`,
+    avatar: "https://i.ibb.co/DgmbRJBj/Ekta.jpg",
+  },
+  {
     id: 4,
     name: "Alffrey George",
     role: "Senior Manager Technology",
@@ -21,20 +35,7 @@ Your leadership, patience, and support have left a lasting impact on all of us. 
 Wishing you all the best in your future endeavors — wherever you go, they’re lucky to have you.`,
     avatar: "https://i.postimg.cc/cCk83gGQ/image-3.jpg",
   },
-  {
-    id: 6,
-    name: "Amit Chawla",
-    role: "Sr. Manager Experience Engineer",
-    message: `Sanjib, it’s been an absolute pleasure working with you. Your calm demeanor, thoughtful leadership, and ability to guide the team through every challenge have been truly admirable. You always knew how to bring clarity, keep things moving smoothly, and ensure everyone felt heard and supported. Your impact here will not be forgotten. Though we’re sad to see you go, we’re cheering for you all the way. Wishing you great success and happiness in your next journey!`,
-    avatar: "https://i.postimg.cc/G3S1ff6m/profile-image-1689309396083.webp",
-  },
-  {
-    id: 3,
-    name: "Ekta Bahety",
-    role: "Lead Engineer",
-    message: `Sanjib, it’s not easy to say goodbye to someone who has been such a great part of our team. Your leadership as both a Scrum Master and Project Manager has made a lasting impact on us all. The way you managed timelines, kept everything on track, and still made sure no one felt overwhelmed really stood out. You always took the time to communicate clearly and check in with everyone, and that meant a lot. You’ve been such a calm, steady presence and a genuinely great person to work with. While we’re sad to see you go, we’re excited for what lies ahead for you. Wish you all the success and happiness in your future endeavours. You’ll be greatly missed!`,
-    avatar: "https://i.ibb.co/DgmbRJBj/Ekta.jpg",
-  },
+
   {
     id: 2,
     name: "Roshan Kumar",
@@ -90,6 +91,39 @@ First of all I would like to congratulate you on your new job 🎉🎉. Also, ma
  
 Thanks,`,
     avatar: "https://i.postimg.cc/76sLp0Lj/Media.jpg",
+  },
+  {
+    id: 11,
+    name: "Iqra Enum",
+    role: "Associate Product Management",
+    message: `It was a pleasure working with you, wishing you the aboslute best on whereever your journey takes you.`,
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNL_ZnOTpXSvhf1UaK7beHey2BX42U6solRA&s",
+  },
+  {
+    id: 12,
+    name: "Harjeet Singh Virdi",
+    role: "Manager Technology",
+    message: `Having Sanjib on the team meant everything was always in control. He never missed a any task and help team also make sure this. He wasn’t just great at project management; he also had a strong hold on technical architecture. His signature line? "PR merge kar do"—a phrase that always caught developers off guard.
+Wishing him all the best!`,
+    avatar: "https://i.postimg.cc/rFg4t4hb/Screenshot-2025-05-14-at-8-33-35-PM.jpg",
+  },
+  {
+    id: 13,
+    name: "Nipun Chauhan",
+    role: "Product Manager",
+    message: `Sanjib has been a great resource in managing the end to end sprint deliverables and have been an excellent Team leader in running the whole show.
+Sanjib has been a wonderful friend in work aspects as well in driving the client confidence and proactively charging the client in building a strong relationship.
+You will be missed a lot buddy !!
+Wishing you best of luck for your future endeavours!!`,
+    avatar: "https://i.postimg.cc/L8L7vyjh/Screenshot-2025-05-14-at-8-28-46-PM.png",
+  },
+  {
+    id: 14,
+    name: "Shweta Agarwal",
+    role: "Manager Agile Program Mgmt.",
+    message: `Sanjib. your impact and contribution to the team is very evident in each meeting, interaction, issue resolution with client and team. Thank you for all your guidance and help in ramping up on teh  project.
+Wishing you the very best for all your future endeavours!!`,
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNL_ZnOTpXSvhf1UaK7beHey2BX42U6solRA&s",
   },
 ];
 
@@ -174,7 +208,28 @@ export const MessagesSection: React.FC = () => {
                   index === 9
                     ? "bg-gradient-to-tr from-pink-50 to-orange-50"
                     : ""
-                }`}
+                }
+                                ${
+                  index === 10
+                    ? "bg-gradient-to-tr from-indigo-50 to-cyan-50"
+                    : ""
+                }
+                ${
+                  index === 11
+                    ? "bg-gradient-to-tr from-violet-50 to-emerald-50"
+                    : ""
+                }
+                                ${
+                  index === 12
+                    ? "bg-gradient-to-tr from-pink-50 to-orange-50"
+                    : ""
+                }
+                ${
+                  index === 13
+                    ? "bg-gradient-to-tr from-blue-50 to-purple-50"
+                    : ""
+                }
+                `}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
