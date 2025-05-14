@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Quote, X } from "lucide-react";
 
-// Sample messages from team members
 const messages = [
   {
     id: 6,
@@ -107,29 +106,86 @@ Thanks,`,
 Wishing him all the best!`,
     avatar: "https://i.postimg.cc/rFg4t4hb/Screenshot-2025-05-14-at-8-33-35-PM.jpg",
   },
-  {
-    id: 13,
-    name: "Nipun Chauhan",
-    role: "Product Manager",
-    message: `Sanjib has been a great resource in managing the end to end sprint deliverables and have been an excellent Team leader in running the whole show.
-Sanjib has been a wonderful friend in work aspects as well in driving the client confidence and proactively charging the client in building a strong relationship.
-You will be missed a lot buddy !!
-Wishing you best of luck for your future endeavours!!`,
-    avatar: "https://i.postimg.cc/L8L7vyjh/Screenshot-2025-05-14-at-8-28-46-PM.png",
-  },
+
   {
     id: 14,
     name: "Shweta Agarwal",
     role: "Manager Agile Program Mgmt.",
     message: `Sanjib. your impact and contribution to the team is very evident in each meeting, interaction, issue resolution with client and team. Thank you for all your guidance and help in ramping up on teh  project.
 Wishing you the very best for all your future endeavours!!`,
+    avatar: "https://i.postimg.cc/4ytyB1S1/Image-3-1.jpg",
+  },
+  {
+    id: 15,
+    name: "Sachin Bapna",
+    role: "Senior Manager",
+    message: `Hi Sanjib,
+I want to express my gratitude for your dedication and hard work on Project Imperial Dade. Working alongside you on this project has been an incredibly rewarding experience. Your contributions have been invaluable, and while you'll be missed, I wish you all the best in your future endeavors. Please stay in touch!`,
+    avatar: "https://i.postimg.cc/YCW9k7fC/Image-4.jpg",
+  },
+  {
+    id: 16,
+    name: "Vikas Kumar Bhaiya",
+    role: "Vice President Agile Program Management",
+    message: `Hi Sanjib,
+As you wrap up your journey with us, I want to thank you for the incredible contributions you've made to the Imperial Dade account and to our team.
+You stepped in during a particularly intense phase and quickly became an indispensable part of the delivery effort. Your leadership, calm presence, and flawless execution as the offshore delivery lead helped us navigate challenges and deliver a robust digital platform that earned consistent praise from the client. It’s no surprise that both the team and the client came to appreciate your dedication and professionalism deeply.
+While I’m genuinely sad to see you go—and know it's a real loss for Sapient—I’m also excited for what lies ahead for you. You’ve made a lasting impact here, and I have no doubt that you’ll do the same wherever you go next.
+Wishing you all the very best in your next adventure. Stay in touch, and good luck!`,
     avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNL_ZnOTpXSvhf1UaK7beHey2BX42U6solRA&s",
   },
 ];
 
 export const MessagesSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [activeMessage, setActiveMessage] = useState<number | null>(null);
+  const [selectedMessage, setSelectedMessage] = useState<typeof messages[0] | null>(null);
+
+  const Modal: React.FC<{message: typeof messages[0], onClose: () => void}> = ({message, onClose}) => (
+    <motion.div 
+      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+    >
+      <motion.div 
+        className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        onClick={e => e.stopPropagation()}
+      >
+        <button 
+          onClick={onClose}
+          className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors"
+          aria-label="Close modal"
+        >
+          <X size={24} />
+        </button>
+        
+        <div className="p-8">
+          <div className="flex items-center mb-6">
+            <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
+              <img src={message.avatar} alt={message.name} className="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-blue-900">{message.name}</h3>
+              <p className="text-gray-500">{message.role}</p>
+            </div>
+          </div>
+          
+          <div className="relative">
+            <div className="absolute top-0 left-0 text-gray-200">
+              <Quote size={48} />
+            </div>
+            <p className="text-gray-800 text-lg leading-relaxed pl-12 pt-4">
+              {message.message}
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
 
   return (
     <section
@@ -159,77 +215,22 @@ export const MessagesSection: React.FC = () => {
             <motion.div
               key={message.id}
               className={`rounded-3xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md relative 
-                ${
-                  index === 0
-                    ? "bg-gradient-to-tr from-blue-50 to-purple-50"
-                    : ""
-                }
-                ${
-                  index === 1
-                    ? "bg-gradient-to-tr from-green-50 to-blue-50"
-                    : ""
-                }
-                ${
-                  index === 2
-                    ? "bg-gradient-to-tr from-yellow-50 to-red-50"
-                    : ""
-                }
-                ${
-                  index === 3
-                    ? "bg-gradient-to-tr from-pink-50 to-orange-50"
-                    : ""
-                }
-                ${
-                  index === 4
-                    ? "bg-gradient-to-tr from-indigo-50 to-cyan-50"
-                    : ""
-                }
-                ${
-                  index === 5
-                    ? "bg-gradient-to-tr from-violet-50 to-emerald-50"
-                    : ""
-                }
-                 ${
-                   index === 6
-                     ? "bg-gradient-to-tr from-yellow-50 to-red-50"
-                     : ""
-                 }
-                                 ${
-                                   index === 7
-                                     ? "bg-gradient-to-tr from-green-50 to-blue-50"
-                                     : ""
-                                 }
-                                                 ${
-                                                   index === 8
-                                                     ? "bg-gradient-to-tr from-yellow-50 to-red-50"
-                                                     : ""
-                                                 }
-                ${
-                  index === 9
-                    ? "bg-gradient-to-tr from-pink-50 to-orange-50"
-                    : ""
-                }
-                                ${
-                  index === 10
-                    ? "bg-gradient-to-tr from-indigo-50 to-cyan-50"
-                    : ""
-                }
-                ${
-                  index === 11
-                    ? "bg-gradient-to-tr from-violet-50 to-emerald-50"
-                    : ""
-                }
-                                ${
-                  index === 12
-                    ? "bg-gradient-to-tr from-pink-50 to-orange-50"
-                    : ""
-                }
-                ${
-                  index === 13
-                    ? "bg-gradient-to-tr from-blue-50 to-purple-50"
-                    : ""
-                }
-                `}
+                ${index === 0 ? "bg-gradient-to-tr from-blue-50 to-purple-50" : ""}
+                ${index === 1 ? "bg-gradient-to-tr from-green-50 to-blue-50" : ""}
+                ${index === 2 ? "bg-gradient-to-tr from-yellow-50 to-red-50" : ""}
+                ${index === 3 ? "bg-gradient-to-tr from-pink-50 to-orange-50" : ""}
+                ${index === 4 ? "bg-gradient-to-tr from-indigo-50 to-cyan-50" : ""}
+                ${index === 5 ? "bg-gradient-to-tr from-violet-50 to-emerald-50" : ""}
+                ${index === 6 ? "bg-gradient-to-tr from-yellow-50 to-red-50" : ""}
+                ${index === 7 ? "bg-gradient-to-tr from-green-50 to-blue-50" : ""}
+                ${index === 8 ? "bg-gradient-to-tr from-yellow-50 to-red-50" : ""}
+                ${index === 9 ? "bg-gradient-to-tr from-pink-50 to-orange-50" : ""}
+                ${index === 10 ? "bg-gradient-to-tr from-indigo-50 to-cyan-50" : ""}
+                ${index === 11 ? "bg-gradient-to-tr from-violet-50 to-emerald-50" : ""}
+                ${index === 12 ? "bg-gradient-to-tr from-pink-50 to-orange-50" : ""}
+                ${index === 13 ? "bg-gradient-to-tr from-blue-50 to-purple-50" : ""}
+                ${index === 14 ? "bg-gradient-to-tr from-yellow-50 to-red-50" : ""}
+              `}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -243,8 +244,7 @@ export const MessagesSection: React.FC = () => {
 
                 <div className="relative mb-8 min-h-500">
                   <p className="text-gray-800 text-xl leading-relaxed mb-4 font-medium pt-16">
-                    {activeMessage === message.id ||
-                    message.message.length <= 321
+                    {message.message.length <= 321
                       ? message.message
                       : `${message.message.substring(0, 321)}...`}
                   </p>
@@ -252,13 +252,9 @@ export const MessagesSection: React.FC = () => {
                   {message.message.length > 320 && (
                     <button
                       className="text-amber-600 hover:text-amber-700 font-medium text-sm focus:outline-none transition-colors duration-200 underline"
-                      onClick={() =>
-                        setActiveMessage(
-                          activeMessage === message.id ? null : message.id
-                        )
-                      }
+                      onClick={() => setSelectedMessage(message)}
                     >
-                      {activeMessage === message.id ? "Read less" : "Read more"}
+                      Read more
                     </button>
                   )}
                 </div>
@@ -287,6 +283,15 @@ export const MessagesSection: React.FC = () => {
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedMessage && (
+          <Modal 
+            message={selectedMessage} 
+            onClose={() => setSelectedMessage(null)} 
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 };
