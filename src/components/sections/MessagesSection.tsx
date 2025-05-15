@@ -134,6 +134,34 @@ While I’m genuinely sad to see you go—and know it's a real loss for Sapient�
 Wishing you all the very best in your next adventure. Stay in touch, and good luck!`,
     avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNL_ZnOTpXSvhf1UaK7beHey2BX42U6solRA&s",
   },
+  {
+    id: 17,
+    name: "Nico Baltzer",
+    role: "VP",
+    message: `Thank you for everything Sanjib! It was a true pleasure. I am wishing you the best in your future activities, hoping our paths will cross again in the future`,
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNL_ZnOTpXSvhf1UaK7beHey2BX42U6solRA&s",
+  },
+  {
+    id: 18,
+    name: "Tanya Lavrenko",
+    role: "QA Test Engineer",
+    message: `Sanjib, it’s been a real pleasure working with you! Thanks for all your help, support, and good vibes. Wishing you all the best in your next role. Stay awesome and keep in touch!`,
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNL_ZnOTpXSvhf1UaK7beHey2BX42U6solRA&s",
+  },
+  {
+    id: 19,
+    name: "Andrii Lavrenko",
+    role: "Contractor",
+    message: `Hey Sanjib, we didn’t get a chance to work closely, but I’ve heard great things. Wishing you all the best in your next chapter - good luck and take care!`,
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNL_ZnOTpXSvhf1UaK7beHey2BX42U6solRA&s",
+  },
+  {
+    id: 20,
+    name: "Brian Schmitt",
+    role: "Sr. Director",
+    message: `Sanjib, Its been a pleasure working with you on this project. We are going to miss the calm and patience you bring to the effort. i wish you all the best for the future.`,
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNL_ZnOTpXSvhf1UaK7beHey2BX42U6solRA&s",
+  },
 ];
 
 export const MessagesSection: React.FC = () => {
@@ -239,6 +267,11 @@ export const MessagesSection: React.FC = () => {
                 ${index === 12 ? "bg-gradient-to-tr from-pink-50 to-orange-50" : ""}
                 ${index === 13 ? "bg-gradient-to-tr from-blue-50 to-purple-50" : ""}
                 ${index === 14 ? "bg-gradient-to-tr from-yellow-50 to-red-50" : ""}
+                ${index === 15 ? "bg-gradient-to-tr from-green-50 to-blue-50" : ""}
+                ${index === 16 ? "bg-gradient-to-tr from-yellow-50 to-red-50" : ""}
+                ${index === 17 ? "bg-gradient-to-tr from-pink-50 to-orange-50" : ""}
+                ${index === 18 ? "bg-gradient-to-tr from-indigo-50 to-cyan-50" : ""}
+                ${index === 19 ? "bg-gradient-to-tr from-violet-50 to-emerald-50" : ""}
               `}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
