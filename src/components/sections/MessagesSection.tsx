@@ -135,6 +135,14 @@ Wishing you all the very best in your next adventure. Stay in touch, and good lu
     avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNL_ZnOTpXSvhf1UaK7beHey2BX42U6solRA&s",
   },
   {
+    id: 21,
+    name: "Santosh Bharati",
+    role: "Lead Experience Engineer",
+    message: `It’s been a privilege and a pleasure working with you, Sanjib. Your dedication, strong work ethic, and positive energy have always stood out and left a lasting impact on the team. You’ve not only been a great colleague but also a genuinely wonderful person to work with.
+Wishing you all the best in your next adventure—thank you for everything! Your presence will definitely be missed.`,
+    avatar: "https://i.postimg.cc/qqLqFvhM/Media-1.jpg",
+  },
+  {
     id: 17,
     name: "Nico Baltzer",
     role: "VP",

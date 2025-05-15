@@ -6,6 +6,7 @@ import { MessagesSection } from './sections/MessagesSection';
 import { ContactSection } from './sections/ContactSection';
 import { Footer } from './Footer';
 import { Confetti } from './Confetti';
+import { TimelineSection } from './sections/TimelineSection';
 // import { LegacySection } from './sections/LegacySection';
 
 export const MainContent: React.FC = () => {
@@ -32,7 +33,7 @@ export const MainContent: React.FC = () => {
         <HeroSection />
         <MemoriesSection />
         <MessagesSection />
-        {/* <LegacySection /> */}
+        {/* <TimelineSection /> */}
         <ContactSection />
       </main>
 
