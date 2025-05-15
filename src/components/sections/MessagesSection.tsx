@@ -179,7 +179,16 @@ export const MessagesSection: React.FC = () => {
               <Quote size={48} />
             </div>
             <p className="text-gray-800 text-lg leading-relaxed pl-12 pt-4">
-              {message.message}
+              {message.message.length <= 321 ? (
+                message.message
+              ) : (
+                <>
+                  {message.message.substring(0, 321)}
+                  <span className="font-bold">
+                    {message.message.substring(321)}
+                  </span>
+                </>
+              )}
             </p>
           </div>
         </div>
